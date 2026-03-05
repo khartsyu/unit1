@@ -26,9 +26,7 @@ function badFunction(a, b, c, d) {
   return {
     name: 'test',
     value: 42,
-    extra: {
-      nested: true,
-    },
+    extra: { nested: true },
   };
 }
 
