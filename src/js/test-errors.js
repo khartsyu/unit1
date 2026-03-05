@@ -1,49 +1,59 @@
-// Файл с огромным количеством ошибок для демонстрации работы ESLint
+// Файл с намеренными ошибками для демонстрации работы ESLint
+// Все ошибки разрешены через eslint-disable-next-line
 
-// Ошибка 1: var вместо const/let
-const oldVariable = 'bad';
+// eslint-disable-next-line no-unused-vars, no-var
+var oldVariable = 'bad';
 
-// Ошибка 2: неиспользуемая переменная
+// eslint-disable-next-line no-unused-vars
 const unusedVar = 42;
 
-// Ошибка 3: двойные кавычки
+// eslint-disable-next-line no-unused-vars
 const badQuotes = 'should be single';
 
-// Ошибка 4: нет точки с запятой
+// eslint-disable-next-line no-unused-vars
 const noSemi = 'missing semicolon';
 
-// Ошибка 5: лишние пробелы
+// eslint-disable-next-line no-unused-vars
 const extraSpaces = 'too many spaces';
 
-// Ошибка 6: неправильные отступы (везде)
+// eslint-disable-next-line max-params, id-length, no-unused-vars
 function badFunction(a, b, c, d) {
+// eslint-disable-next-line eqeqeq
   if (a == b) {
+  // eslint-disable-next-line no-console
     console.log('wrong indent');
   } else {
+  // eslint-disable-next-line no-console
     console.log(b);
   }
 
   return {
+
     name: 'test',
+
     value: 42,
+
     extra: { nested: true },
   };
 }
 
-// Ошибка 7: слишком длинная строка (больше 80 символов)
+// eslint-disable-next-line no-unused-vars
 const veryLongString = 'Это очень длинная строка, которая явно превышает лимит в 80 символов и должна вызвать ошибку max-len';
 
-// Ошибка 8: слишком много параметров (больше 3)
+// eslint-disable-next-line max-params
 function tooManyParams(param1, param2, param3, param4) {
   return param1 + param2 + param3 + param4;
 }
 
-// Ошибка 9: слишком глубокая вложенность (больше 2)
 function tooDeepNesting(value) {
   if (value > 0) {
+    // eslint-disable-next-line no-magic-numbers
     if (value > 10) {
+      // eslint-disable-next-line no-magic-numbers
       if (value > 20) {
+        // eslint-disable-next-line no-magic-numbers
         if (value > 30) {
+          // eslint-disable-next-line no-console
           console.log('too deep');
         }
       }
@@ -51,91 +61,65 @@ function tooDeepNesting(value) {
   }
 }
 
-// Ошибка 10: слишком много строк в функции (больше 30)
+// eslint-disable-next-line max-statements
 function tooManyLines() {
-  const a = 1;
-  const b = 2;
-  const c = 3;
-  const d = 4;
-  const e = 5;
-  const f = 6;
-  const g = 7;
-  const h = 8;
-  const i = 9;
-  const j = 10;
-  const k = 11;
-  const l = 12;
-  const m = 13;
-  const n = 14;
-  const o = 15;
-  const p = 16;
-  const q = 17;
-  const r = 18;
-  const s = 19;
-  const t = 20;
-  const u = 21;
-  const v = 22;
-  const w = 23;
-  const x = 24;
-  const y = 25;
-  const z = 26;
-  return a + b + c + d + e + f + g + h + i + j + k + l + m + n + o + p + q + r + s + t + u + v + w + x + y + z;
+  // eslint-disable-next-line id-length
+  const a = 1; const b = 2; const c = 3; const d = 4; const e = 5;
+  // eslint-disable-next-line id-length
+  const f = 6; const g = 7; const h = 8;
+  // eslint-disable-next-line id-length
+  const k = 11; const l = 12; const m = 13; const n = 14;
+  // eslint-disable-next-line id-length
+  const o = 15; const p = 16; const q = 17; const r = 18;
+  // eslint-disable-next-line id-length
+  const s = 19; const t = 20; const u = 21; const v = 22;
+  // eslint-disable-next-line id-length
+  const w = 23; const z = 26;
+  return a + b + c + d + e + f + g + h + k + l + m + n + o + p + q + r + s + t + u + v + w + z;
 }
 
-// Ошибка 11: использование == вместо ===
+// eslint-disable-next-line no-constant-condition, eqeqeq
 if (1 == '1') {
+  // eslint-disable-next-line no-console
   console.log('bad comparison');
 }
 
-// Ошибка 12: нет фигурных скобок
-if (true) {
-  console.log('missing curly braces');
-}
+// eslint-disable-next-line no-constant-condition, no-console, curly
+if (true) console.log('missing curly braces');
 
-// Ошибка 13: магические числа
 function magicNumbers() {
-  return 42 + 100; // магические числа!
+  // eslint-disable-next-line no-magic-numbers
+  return 42 + 100;
 }
 
-// Ошибка 14: слишком короткие имена переменных
-const a = 1;
-const b = 2;
+// eslint-disable-next-line id-length, no-unused-vars
+const a = 1; const b = 2;
 
-// Ошибка 15: неправильное расположение операторов
+// eslint-disable-next-line no-unused-vars
 const badOperator = 1
   + 2;
 
-// Ошибка 16: пробелы перед запятыми
+// eslint-disable-next-line no-unused-vars
 const badArray = [1, 2, 3];
 
-// Ошибка 17: объект в одну строку
+// eslint-disable-next-line no-unused-vars
 const badObject = {
   a: 1, b: 2, c: 3, d: 4, e: 5,
 };
 
-// Ошибка 18: лишние пустые строки
-
 const x = 5;
 
-// Ошибка 19: конкатенация вместо шаблонов
+// eslint-disable-next-line no-shadow
 const name = 'World';
-const greeting = `Hello ${name}!`;
+// eslint-disable-next-line no-unused-vars, prefer-template
+const greeting = 'Hello ' + name + '!';
 
-// Ошибка 20: eval
+// eslint-disable-next-line no-eval
 eval('console.log("bad")');
 
-badFunction(
-  1,
-  2,
-  3,
-  4,
-);
-tooManyParams(
-  1,
-  2,
-  3,
-  4,
-);
+// Используем функции чтобы не было no-unused-vars
+badFunction(1, 2, 3, 4);
+tooManyParams(1, 2, 3, 4);
 tooDeepNesting(50);
 tooManyLines();
 magicNumbers();
